@@ -1,7 +1,6 @@
 {
-  "name": "0x00-es6_basic",
+  "name": "alx-backend-javascript",
   "version": "1.0.0",
-  "description": "Curriculum Short Specializations Average: 0.0% 0x00. ES6 Basics JavaScript ES6  Weight: 1  Project will start Sep 30, 2024 6:00 AM, must end by Oct 1, 2024 6:00 AM  Checker will be released at Sep 30, 2024 12:00 PM  An auto review will be launched at the deadline Concepts For this project, we expect you to look at these concepts:",
   "main": "0-main.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint",
@@ -11,9 +10,10 @@
     "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/node": "^7.8.0",
-    "@babel/preset-env": "^7.6.0",
+    "@babel/core": "^7.25.2",
+    "@babel/node": "^7.25.0",
+    "@babel/preset-env": "^7.25.4",
+    "babel-cli": "^6.26.0",
     "eslint": "^6.4.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
@@ -22,5 +22,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0"
+  }
 }
