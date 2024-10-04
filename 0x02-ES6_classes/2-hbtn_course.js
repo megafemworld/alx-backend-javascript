@@ -1,7 +1,14 @@
 class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = name;
-    this._length = length;
+    if (typeof name === 'string') {
+      this._name = name;
+    }
+    if (typeof length === 'number') {
+      this._length = length;
+    }
+    if (typeof students === 'object') {
+      this._students = students;
+    }
     this._students = students;
   }
 
