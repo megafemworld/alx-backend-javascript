@@ -21,7 +21,7 @@ class HolbertonCourse {
     if (typeof name !== 'string') {
       throw new TypeError('Name must be a string');
     }
-    this._name = name
+    this._name = name;
   }
 
   set length(length) {
