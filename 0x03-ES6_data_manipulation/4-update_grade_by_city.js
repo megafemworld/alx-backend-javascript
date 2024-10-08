@@ -14,6 +14,12 @@ export default function updateStudentGradeByCity(getListStudents, city, newGrade
   if (!Array.isArray(getListStudents) || !Array.isArray(newGrades)) {
     return [];
   }
+  if (typeof city !== 'string') {
+    return [];
+  }
+  if (!getListStudents.every((student) => typeof student.id === 'number' && typeof student.firstName === 'string' && typeof student.location === 'string')) {
+    return [];
+  }
   return getListStudents
     .filter((student) => student.location === city)
     .map((student) => ({
