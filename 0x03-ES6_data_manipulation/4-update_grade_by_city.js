@@ -26,7 +26,12 @@ export default function updateStudentGradeByCity(getListStudents, city, newGrade
       id: student.id,
       firstName: student.firstName,
       location: student.location,
-      grade: newGrades.filter(grade => grade.studentId === student.id)
-      .pop()?.grade || 'N/A',
-      }));
+      grade: (() => {
+        const grades = newGrades.filter((grade) => grade.studentId === student.id);
+        if (grades.length) {
+          return grades[0].grade;
+        }
+        return 'N/A';
+      })(),
+    }));
 }
