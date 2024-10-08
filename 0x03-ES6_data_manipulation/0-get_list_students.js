@@ -1,7 +1,7 @@
 /**
- * Retrieve a list of students
- * @author Femi
- * @returns {Array} Array of students
+ * Retrieves a list of students.
+ * @author Femi <https://github.com/megafemworld>
+ * @returns {{id: Number, firstName: String, location: String}[]}
  */
 export default function getListStudents() {
   return [
