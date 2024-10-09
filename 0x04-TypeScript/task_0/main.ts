@@ -39,3 +39,4 @@ const renderTable = (students: Student[]) => {
 };
 
 renderTable(studentsList);
+
