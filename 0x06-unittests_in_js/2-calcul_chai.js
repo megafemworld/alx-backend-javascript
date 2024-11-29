@@ -7,4 +7,4 @@ function calculateNumber(type, a, b) {
     }
     return 0;
   }
-  module.exports = calculateNumber;
+export default calculateNumber;
