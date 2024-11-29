@@ -1,7 +1,6 @@
 const { expect } = require('chai');
 const calculateNumber = require('./2-calcul_chai');
 
-
 describe('calculateNumber', () => {
   describe('type == "SUM"', () => {
     it('equal positive numbers', () => {
