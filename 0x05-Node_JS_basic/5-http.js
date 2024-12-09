@@ -1,5 +1,6 @@
 const http = require('http');
 const fs = require('fs');
+
 const path = process.argv.length > 2 ? process.argv[2] : '';
 
 function countStudents(path) {
@@ -56,6 +57,7 @@ const app = http.createServer((req, res) => {
         res.end(value.join('\n'));
       })
       .catch((error) => {
+        res.write('This is the list of our students\n');
         res.end(error.message);
       });
   }
