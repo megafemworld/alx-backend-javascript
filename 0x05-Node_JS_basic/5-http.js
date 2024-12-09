@@ -56,9 +56,9 @@ const app = http.createServer((req, res) => {
       .then((value) => {
         res.end(value.join('\n'));
       })
-      .catch((error) => {
-        res.write('This is the list of our students');
-        res.end(error.message);
+      .catch(() => {
+        res.write('This is the list of our students\n');
+        res.end('Cannot load the database');
       });
   }
 });
