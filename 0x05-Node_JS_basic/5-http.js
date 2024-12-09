@@ -57,7 +57,7 @@ const app = http.createServer((req, res) => {
         res.end(value.join('\n'));
       })
       .catch((error) => {
-        res.write('This is the list of our students\n');
+        res.write('This is the list of our students');
         res.end(error.message);
       });
   }
