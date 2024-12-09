@@ -1,4 +1,4 @@
-const countStudents = require('./3-read_file_async');
+const countStudents = require('./3-read_file_async').default;
 
 countStudents("nope.csv")
     .then(() => {
@@ -13,7 +13,7 @@ Error: Cannot load the database
 ...
 bob@dylan:~$
 bob@dylan:~$ cat 3-main_1.js
-const countStudents = require('./3-read_file_async');
+const countStudents = require('./3-read_file_async').default;
 
 countStudents("database.csv")
     .then(() => {

@@ -10,7 +10,7 @@ function countStudents(path) {
       const datas = data.toString('utf-8').trim().split('\n');
       const studentRecords = {};
       const fileHead = datas[0].split(',');
-      const StudentNames = fileHead.slice(0, fileHead.length - 1);
+      const studentNames = fileHead.slice(0, fileHead.length - 1);
 
       for (const data of datas.slice(1)) {
         const studentData = data.split(',');
@@ -21,22 +21,21 @@ function countStudents(path) {
           studentRecords[field] = [];
         }
 
-        const dataEntry = StudentNames
+        const dataEntry = studentNames
           .map((name, index) => [name, studentMainData[index]]);
         studentRecords[field].push(dataEntry);
       }
 
-      console.log(`Number of students: ${datas.length - 1}`);
-
       for (const field in studentRecords) {
         if (Object.prototype.hasOwnProperty.call(studentRecords, field)) {
           const list = studentRecords[field];
-          console.log(`Number of students in ${field}: ${list.length}. List: ${list.map((item) => item[0][1]).join(', ')}`);
+          const studentNames = list.map((item) => item[0][1]).join(', ');
+          console.log(`Number of students in ${field}: ${list.length}.`);
+          console.log(`List: ${studentNames}`);
         }
       }
-      resolve();
+      resolve({ studentRecords, totalStudents: datas.length - 1 });
     });
   });
 }
-
 module.exports = countStudents;
