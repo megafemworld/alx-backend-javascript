@@ -52,13 +52,13 @@ const app = http.createServer((req, res) => {
     res.end('Hello Holberton School!');
   }
   if (req.url === '/students') {
-    res.write('This is the list of our students');
+    res.write('This is the list of our students\n');
     countStudents(path)
       .then((value) => {
         res.end(value.join('\n'));
       })
-      .catch(() => {
-        res.end('Cannot load the database');
+      .catch((error) => {
+        res.end(`Cannot load the database: ${error}`);
       });
   }
 });
