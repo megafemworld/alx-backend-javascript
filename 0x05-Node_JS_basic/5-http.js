@@ -52,7 +52,7 @@ const app = http.createServer((req, res) => {
     res.end('Hello Holberton School!');
   }
   if (req.url === '/students') {
-    res.write('This is the list of our students\n');
+    res.write('This is the list of our students');
     countStudents(path)
       .then((value) => {
         res.end(value.join('\n'));
