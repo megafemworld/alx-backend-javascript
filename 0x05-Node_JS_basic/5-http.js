@@ -56,9 +56,6 @@ const app = http.createServer((req, res) => {
     countStudents(path)
       .then((value) => {
         res.end(value.join('\n'));
-      })
-      .catch((error) => {
-        res.end(error.message);
       });
   }
 });
