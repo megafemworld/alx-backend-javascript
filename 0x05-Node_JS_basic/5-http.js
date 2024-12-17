@@ -6,11 +6,9 @@ const path = process.argv.length > 2 ? process.argv[2] : '';
 function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (err, data) => {
-      if (err) {
+      if (err || !data) {
         reject(Error('Cannot load the database'));
-      }
-      if (!data) {
-        reject(Error('Cannot load the database'));
+        return;
       }
       const datas = data.trim().split('\n');
       const studentRecords = {};
@@ -56,6 +54,9 @@ const app = http.createServer((req, res) => {
     countStudents(path)
       .then((value) => {
         res.end(value.join('\n'));
+      })
+      .catch(() => {
+        res.end('Cannot load the database');
       });
   }
 });
