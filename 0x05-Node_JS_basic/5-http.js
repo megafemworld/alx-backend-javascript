@@ -46,6 +46,7 @@ function countStudents(path) {
     });
   });
 }
+
 const app = http.createServer((req, res) => {
   if (req.url === '/') {
     res.end('Hello Holberton School!');
@@ -57,7 +58,7 @@ const app = http.createServer((req, res) => {
         res.end(value.join('\n'));
       })
       .catch(() => {
-        res.end('This is the list of our students Cannot load the database');
+        res.end('Cannot load the database');
       });
   }
 });
