@@ -1,6 +1,7 @@
 const express = require('express');
-
 const fs = require('fs');
+
+const path = process.argv.length > 2 ? process.argv[2] : '';
 
 const app = express();
 
@@ -47,12 +48,12 @@ function countStudents(path) {
 }
 
 app.get('/', (req, res) => {
-  res.send('Hello ALX!');
+  res.send('Hello Holberton School!');
 });
 
 app.get('/students', (req, res) => {
   res.send('This is the list of our students\n');
-  countStudents('path')
+  countStudents(path)
     .then((value) => {
       res.send(value.join('\n'));
     })
@@ -62,4 +63,4 @@ app.get('/students', (req, res) => {
 });
 
 app.listen(1245);
-export default app;
+module.exports = app;
