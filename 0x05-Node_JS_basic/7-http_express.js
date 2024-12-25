@@ -52,13 +52,13 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', (req, res) => {
-  res.send('This is the list of our students\n');
+  res.write('This is the list of our students\n');
   countStudents(path)
     .then((value) => {
-      res.send(value.join('\n'));
+      res.end(value.join('\n'));
     })
     .catch(() => {
-      res.send('Cannot load the database');
+      res.end('Cannot load the database');
     });
 });
 
