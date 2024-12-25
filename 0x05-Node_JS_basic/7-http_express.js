@@ -60,3 +60,6 @@ app.get('/students', (req, res) => {
       res.send('Cannot load the database');
     });
 });
+
+app.listen(1245);
+export default app;
